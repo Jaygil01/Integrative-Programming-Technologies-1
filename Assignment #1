@@ -1,0 +1,56 @@
+‎<?php
+‎if statement - Check if a student passed
+‎$grade = 85;
+‎
+‎if ($grade >= 75) {
+‎    echo "Congrats! 🎉 You passed the exam.<br>";
+‎}
+‎
+‎
+‎ if...else statement - Check if someone is hungry
+‎$isHungry = true;
+‎
+‎if ($isHungry) {
+‎    echo "You should eat something 🍔<br>";
+‎} else {
+‎    echo "You're not hungry right now. Maybe later! 😊<br>";
+‎}
+‎
+‎
+‎  if...elseif...else statement - Decide what to wear based on the weather
+‎$weather = "rainy";
+‎
+‎if ($weather == "sunny") {
+‎    echo "It's sunny 🌞 Wear sunglasses and light clothes.<br>";
+‎} elseif ($weather == "rainy") {
+‎    echo "It's rainy 🌧️ Don't forget your umbrella!<br>";
+‎} elseif ($weather == "cold") {
+‎    echo "It's cold 🥶 Wear a jacket.<br>";
+‎} else {
+‎    echo "Weather is unpredictable 🤔 Just be ready!<br>";
+‎}
+‎
+‎
+‎  switch statement - Suggest an activity based on the day
+‎$day = "Saturday";
+‎
+‎switch ($day) {
+‎    case "Monday":
+‎        echo "Back to work 💼<br>";
+‎        break;
+‎    case "Wednesday":
+‎        echo "Halfway through the week! ⏳<br>";
+‎        break;
+‎    case "Friday":
+‎        echo "TGIF! 🎉 Movie night maybe?<br>";
+‎        break;
+‎    case "Saturday":
+‎        echo "Weekend vibes! 🏖️ Time to relax.<br>";
+‎        break;
+‎    case "Sunday":
+‎        echo "Family day ❤️<br>";
+‎        break;
+‎    default:
+‎        echo "Just another day... 🌍<br>";
+‎}
+‎?>
