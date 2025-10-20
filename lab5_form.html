@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lab 5: AJAX Communication</title>
+</head>
+<body>
+<h2>Login Form</h2>
+<form id="myForm">
+ <label for="name">Name:</label>
+<input type="text" id="name" name="name" required><br><br>
+
+<input type="submit" value="Submit via AJAX">
+</form>
+
+<p><strong>Response:</strong> <span id="responseMessage"></span></p>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+event.preventDefault(); 
+const name = document.getElementById('name').value;
+const dataToSend = {
+user_name: name
+ };
+
+fetch('lab5_process.php', {method: '
+ headers: { 
+
+ },
+body: JSON.stringify(dataToSend)
+ })
+
+ .then(response => response.json())
+ .then(data => {
+document.getElementById('responseMessage').textContent = data.message;
+})
+ .catch(error => {
+ console.error('Error:', error);
+document.getElementById('responseMessage').textContent = 'An error occurred during communication.';
+ });
+});
+</script>
+</body>
+</html>
