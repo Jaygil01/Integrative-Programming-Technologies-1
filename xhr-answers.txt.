@@ -1,0 +1,7 @@
+‎1. readyState vs. statusThe core difference is what each property reports about the request:readyState: Tracks the lifecycle progress of the request itself (e.g., $0=\text{UNSENT}$, $4=\text{DONE}$).status: Reports the HTTP outcome of the server's response (e.g., $200=\text{OK}$, $404=\text{NOT FOUND}$).
+‎
+‎2. How to Make it Asynchronous
+‎You make an XHR request asynchronous by setting the third parameter of the open() method to true (which is the default). You then use an event handler, like onload, to process the response when it eventually arrives, instead of waiting for it immediately.
+‎
+‎3. Why Asynchronous is Recommended
+‎Asynchronous communication is preferred because it prevents the main JavaScript thread from blocking. This ensures the application's user interface remains responsive and doesn't freeze while waiting for data from the server, providing a much better user experience.
