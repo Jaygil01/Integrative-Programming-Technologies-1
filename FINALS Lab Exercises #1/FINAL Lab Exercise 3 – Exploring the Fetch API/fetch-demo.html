@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    h2 {
+      color: #5eead4;
+    }
+    button {
+      background-color: #5eead4;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #38b2ac;
+    }
+    #output {
+      margin-top: 20px;
+      border: 1px solid #5eead4;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+    }
+    .error {
+      color: #ff6b6b;
+    }
+    .success {
+      color: #a7f3d0;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧪 Exploring the Fetch API</h2>
+  <p>Click the buttons below to test GET and POST requests.</p>
+
+  <button id="loadData">Load Post Data (GET)</button>
+  <button id="createPost">Create New Post (POST)</button>
+
+  <div id="output">👉 Click a button to begin.</div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // GET REQUEST
+    document.getElementById("loadData").addEventListener("click", function() {
+      output.innerHTML = "⏳ Loading post data...";
+      fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("HTTP Error: " + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          output.innerHTML = `
+            <h3 class="success">✅ GET Request Successful!</h3>
+            <strong>Post Title:</strong> ${data.title}<br><br>
+            <strong>Content:</strong> ${data.body}
+          `;
+        })
+        .catch(error => {
+          output.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+        });
+    });
+
+    // POST REQUEST
+    document.getElementById("createPost").addEventListener("click", function() {
+      output.innerHTML = "⏳ Sending new post data...";
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: "My New Post",
+          body: "Learning Fetch API is fun!",
+          userId: 1
+        })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("HTTP Error: " + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        output.innerHTML = `
+          <h3 class="success">✅ New Post Created!</h3>
+          <strong>Post ID:</strong> ${data.id}<br>
+          <strong>Title:</strong> ${data.title}<br>
+          <strong>Message:</strong> Post successfully sent to the server!
+        `;
+      })
+      .catch(error => {
+        output.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+      });
+    });
+  </script>
+</body>
+</html>
