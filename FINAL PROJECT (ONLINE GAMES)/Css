@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", cursive; /* Retro pixel font */
+}
+
+body {
+    background: #0b0b0b; /* Dark background like arcade screen */
+    color: #f0f0f0;
+    padding-bottom: 50px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff00ff; /* Neon pink */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.subtitle {
+    color: #00ffff; /* Neon cyan */
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* SEARCH BAR */
+#searchBar {
+    width: 80%;
+    max-width: 450px;
+    padding: 12px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #ff00ff;
+    background: #111;
+    color: #00ff00;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+    outline: none;
+    transition: 0.2s;
+}
+
+#searchBar:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* GALLERY GRID */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #ff00ff;
+    transition: 0.2s ease;
+    box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff inset;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff inset;
+    border-color: #00ffff;
+}
+
+/* GAME IMAGES */
+.card img {
+    width: 100%;             /* fill card width */
+    height: auto;            /* maintain original aspect ratio */
+    max-height: 150px;       /* limit height */
+    object-fit: contain;     /* fit image inside card without cropping */
+    border-radius: 4px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    background: #111;        /* fallback for transparent images */
+}
+
+/* GAME NAME */
+.card h3 {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffcc00; /* Retro yellow */
+    text-shadow: 1px 1px #ff0000, 2px 2px #0000ff;
+}
+
+/* API RESULT BOX */
+#apiResult {
+    background: #111;
+    color: #00ff00;
+    padding: 15px;
+    margin: 25px;
+    border-radius: 5px;
+    display: none;
+    white-space: pre-wrap;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00 inset;
+    font-family: "Press Start 2P", cursive;
+    font-size: 10px;
+}
