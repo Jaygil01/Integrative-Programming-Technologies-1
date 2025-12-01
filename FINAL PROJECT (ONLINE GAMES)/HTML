@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Games Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include arcade pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Online Games Gallery</h1>
+        <p class="subtitle">Search a game and click it to view API demo data</p>
+
+        <input type="text" id="searchBar" placeholder="Search game..." onkeyup="searchGame()">
+    </header>
+
+    <div class="gallery" id="gameGallery">
+
+        <!-- GAME CARDS -->
+        <div class="card" data-name="mobile legends" onclick="getRestData()">
+            <img src="mL.png" alt="Mobile Legends">
+            <h3>Mobile Legends</h3>
+          <h7>Mobile Legends: Bang Bang is a free-to-play, 5v5 multiplayer online battle arena (MOBA) game for mobile devices where two teams of five players compete to destroy the enemy base.</h7>
+        </div>
+
+        <div class="card" data-name="roblox" onclick="getGraphQL()">
+            <img src="roblox.png" alt="Roblox">
+            <h3>Roblox</h3>
+          <h7>Roblox is an online platform where users can create, share, and play games and experiences made by other users.</h7>
+        </div>
+
+        <div class="card" data-name="call of duty" onclick="getRPC()">
+            <img src="COD.jpeg" alt="Call of Duty">
+            <h3>Call of Duty</h3>
+          <h7>Call of Duty is a popular first-person shooter (FPS) video game franchise known for its military-themed action, which spans various eras from World War II to the future. </h7>
+        </div>
+
+        <div class="card" data-name="8 ball pool" onclick="getSOAP()">
+            <img src="8ball.jpg" alt="8 Ball Pool">
+            <h3>8 Ball Pool</h3>
+          <h7>8-ball is a popular billiards game played on a pool table with 15 numbered balls and a cue ball, where players are assigned either the seven "solid" balls (1-7) or the seven "striped" balls (9-15). </h7>
+        </div>
+
+        <div class="card" data-name="pubg mobile">
+            <img src="pubg.jpeg" alt="PUBG Mobile">
+            <h3>PUBG Mobile</h3>
+          <h7>PUBG (PlayerUnknown's Battlegrounds) is a multiplayer battle royale game where up to 100 players parachute onto an island, scavenge for weapons and gear, and fight to be the last one or team standing. </h7>
+        </div>
+
+        <div class="card" data-name="farlight 84">
+            <img src="farlight.jpeg" alt="Farlight 84">
+            <h3>Farlight 84</h3>
+          <h7>Farlight 84 is a free-to-play, fast-paced hero shooter battle royale game with a focus on team-based combat and fast movement. </h7>
+        </div>
+
+        <div class="card" data-name="minecraft">
+            <img src="minecraft.jpg" alt="Minecraft">
+            <h3>Minecraft</h3>
+          <h7>Minecraft is a popular sandbox video game where players explore and modify a 3D world made of blocks.</h7>
+        </div>
+
+        <div class="card" data-name="honor of kings">
+            <img src="Hok.jpeg" alt="Honor of Kings">
+            <h3>Honor of Kings</h3>
+          <h7>HOK can refer to the mobile game Honor of Kings, an American design and architecture firm, or a small enclosure in Africa.</h7>
+        </div>
+
+        <div class="card" data-name="league of legends">
+            <img src="lol.jpeg" alt="League of Legends">
+            <h3>League of Legends</h3>
+          <h7>League of Legends is a free-to-play, 5v5 team-based strategy game where two teams of five players compete to destroy the opposing team's base, or "Nexus".</h7>
+        </div>
+
+        <div class="card" data-name="clash of clans">
+            <img src="Coc.jpg" alt="Clash of Clans">
+            <h3>Clash of Clans</h3>
+          <h7>Clash of Clans is a freemium mobile strategy game where players build a village, train an army, and attack other players' villages to get resources and trophies. </h7>
+        </div>
+
+    </div>
+
+    <div id="apiResult"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
